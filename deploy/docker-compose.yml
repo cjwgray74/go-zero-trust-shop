@@ -1,0 +1,21 @@
+
+version: "3.9"
+services:
+  vault:
+    image: hashicorp/vault:1.16
+    container_name: vault
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: root
+      VAULT_DEV_LISTEN_ADDRESS: "0.0.0.0:8200"
+    cap_add: ["IPC_LOCK"]
+    command: vault server -dev -dev-root-token-id=root -dev-listen-address=0.0.0.0:8200
+  pg:
+    image: postgres:16
+    container_name: pg
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: shop
+    ports:
+      - "5432:5432"
