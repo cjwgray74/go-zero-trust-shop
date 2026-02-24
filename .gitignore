@@ -1,0 +1,22 @@
+﻿# Go build & cache
+bin/
+*.exe
+*.test
+*.out
+
+# Go modules (keep go.sum if you prefer consistent reproducible builds)
+# go.sum
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Podman / Docker artifacts
+*.pid
